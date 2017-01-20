@@ -16,7 +16,7 @@ public class Shop {
         this.name = name;
     }
 
-    public void addToShop(){
+    public void addToShop() {
 
         SportEquipment Snowboard = new SportEquipment("Snowboard", 50);
         SportEquipment Helmet = new SportEquipment("Helmet", 10);
@@ -27,27 +27,26 @@ public class Shop {
         goods.put(Gloves, 3);
     }
 
-    public SportEquipment isInShop(String name){  // проверяет есть ли строка с таким названиев в ключе
-        if (goods.containsKey(name)){
-            if (goods.containsValue(3)){
-        //??        inShop = goods.get(3);  // если такая строка есть то записать ее в переменную
-                return inShop;
-            }
+    public boolean isInShop(String name) {  // проверяет есть ли строка с таким названием в ключе
+        if (goods.containsKey(name)) {
+            return true; // если такая строка есть
         }
-        return null;
+        return false; // если такой нет
     }
 
-    public void addToRentUnits(){ // взятый в рент товар помещаем в коллекцию RentUnit
+    public void getGood() { // взять из мапы объект
         RentUnit putToRent = new RentUnit();
+        goods.get(name);
         putToRent.addToRentUnitList(inShop);
+        goods.remove(inShop);
+
     }
 
-    public void delFromShop(){  // взятый в рент товар удаляем из мэпа товаров, очищаем переменную
-   //??     goods.remove(inShop, 1);
-        inShop = null;
-    }
+    public void goodsInTheShop() {
 
-    public void goodsInTheShop(){
-        System.out.println("In the shop: " + goods);
+        for (SportEquipment eq : goods.keySet()) {
+            System.out.println(eq.toString() + " = " + goods.get(eq));
+
+        }
     }
 }

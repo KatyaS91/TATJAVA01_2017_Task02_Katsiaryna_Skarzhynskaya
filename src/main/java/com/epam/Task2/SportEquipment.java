@@ -27,4 +27,12 @@ public class SportEquipment {
         price = this.getPrice();
     }
 
+    @Override
+    public String toString() {
+        return "SportEquipment{" +
+                "title='" + title + '\'' +
+                ", price=" + price +
+                '}';
+    }
+
 }

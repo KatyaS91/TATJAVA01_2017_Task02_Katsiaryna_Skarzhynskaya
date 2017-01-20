@@ -35,8 +35,12 @@ public class Customer {
 
     public void getToRent(String GoodName){
         Shop wantToTake = new Shop(GoodName); // создали объект магазин с запросом строки названия товара
-        wantToTake.isInShop(GoodName); // вызвали метод из шопа со строкой названия
-
+        boolean availability = wantToTake.isInShop(GoodName); // вызвали метод из шопа со строкой названия
+        if (availability) {
+            wantToTake.getGood();
+        } else {
+            System.out.println("We don't have such equipment");
+        }
     }
 
 }

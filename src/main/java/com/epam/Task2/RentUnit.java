@@ -1,7 +1,6 @@
 package com.epam.Task2;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
 
 /**
  * Created by skarzhynskaya_katya on 1/19/17.
@@ -9,10 +8,10 @@ import java.util.Map;
 
 public class RentUnit {
 
-    private Map <SportEquipment, Integer> units = new HashMap <SportEquipment, Integer>();
+    private ArrayList<SportEquipment> units = new ArrayList<SportEquipment>();
 
-    public void addToRentUnitList(SportEquipment x){ // добавляем в мэп товар взятый в рент
-        units.put(x, 1);
+    public void addToRentUnitList(SportEquipment x) {
+        units.add(x);
     }
 
     public void RentList(){
