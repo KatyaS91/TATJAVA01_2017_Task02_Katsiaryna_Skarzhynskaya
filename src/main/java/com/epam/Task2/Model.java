@@ -10,13 +10,10 @@ public class Model {
         Shop fillTheShop = new Shop("Snowboard");
         fillTheShop.addToShop();
         fillTheShop.goodsInTheShop();
+        //fillTheShop.setName(firstCustomer.getGoodName());
 
-        Customer firstCustomer = new Customer("Snowboard", 1, wantToTake); // создали объект клиента
+        Customer firstCustomer = new Customer("Snowboard", 1, fillTheShop); // создали объект клиента
         firstCustomer.getToRent("Snowboard");  // вызвали методы взять в прокат что-то с названием
-
-
-        Shop wantToTake = new Shop(firstCustomer.getGoodName()); // создали объект магазин с запросом строки названия товара
-        wantToTake.setName(firstCustomer.getGoodName());
 
         RentUnit listOfGoodsInRent = new RentUnit();
         listOfGoodsInRent.RentList();

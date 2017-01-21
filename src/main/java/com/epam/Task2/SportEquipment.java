@@ -35,4 +35,15 @@ public class SportEquipment {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof SportEquipment)) return false;
+
+        SportEquipment that = (SportEquipment) o;
+
+        if (getPrice() != that.getPrice()) return false;
+        return getTitle().equals(that.getTitle());
+    }
+
 }
