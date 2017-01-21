@@ -9,7 +9,13 @@ import java.util.Map;
 public class Shop {
 
     SportEquipment inShop;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     String name;
+
     private Map<SportEquipment, Integer> goods = new HashMap<SportEquipment, Integer>();
 
     public Shop(String name) {
@@ -28,13 +34,14 @@ public class Shop {
     }
 
     public boolean isInShop(String name) {  // проверяет есть ли строка с таким названием в ключе
-        if (goods.containsKey(name)) {
-            return true; // если такая строка есть
+        SportEquipment x = new SportEquipment(name, 50);
+        if (goods.containsKey(x)) {
+            return goods.containsKey(x); // если такая строка есть
         }
         return false; // если такой нет
     }
 
-    public void getGood() { // взять из мапы объект
+    public void getGood(String name) { // взять из мапы объект
         RentUnit putToRent = new RentUnit();
         goods.get(name);
         putToRent.addToRentUnitList(inShop);

@@ -8,12 +8,14 @@ public class Customer {
 
     private String GoodName;
     private int number;
+    private Shop sh;
 
-    public Customer(String goodName, int number) {
+    public Customer(String goodName, int number, Shop sh) {
         GoodName = goodName;
         this.number = number;
-    }
+        this.sh = sh;
 
+    }
 
     public int getNumber() {
         return number;
@@ -34,10 +36,9 @@ public class Customer {
 
 
     public void getToRent(String GoodName){
-        Shop wantToTake = new Shop(GoodName); // создали объект магазин с запросом строки названия товара
-        boolean availability = wantToTake.isInShop(GoodName); // вызвали метод из шопа со строкой названия
+        boolean availability = sh.isInShop(GoodName); // вызвали метод из шопа со строкой названия
         if (availability) {
-            wantToTake.getGood();
+            sh.getGood(GoodName);
         } else {
             System.out.println("We don't have such equipment");
         }
