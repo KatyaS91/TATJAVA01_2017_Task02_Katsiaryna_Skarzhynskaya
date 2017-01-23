@@ -10,23 +10,20 @@ public class Shop {
 
     SportEquipment inShop;
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    String name;
-
     private Map<SportEquipment, Integer> goods = new HashMap<SportEquipment, Integer>();
 
-    public Shop(String name) {
-        this.name = name;
-    }
 
     public void addToShop() {
 
         SportEquipment Snowboard = new SportEquipment("Snowboard", 50);
+        Snowboard.setTitle("Snowboard");
+        Snowboard.setPrice(50);
         SportEquipment Helmet = new SportEquipment("Helmet", 10);
+        Helmet.setPrice(10);
+        Helmet.setTitle("Helmet");
         SportEquipment Gloves = new SportEquipment("Gloves", 10);
+        Gloves.setTitle("Gloves");
+        Gloves.setPrice(10);
 
         goods.put(Snowboard, 3);
         goods.put(Helmet, 3);
@@ -43,7 +40,8 @@ public class Shop {
 
     public void getGood(String name) { // взять из мапы объект
         RentUnit putToRent = new RentUnit();
-        goods.get(name);
+        SportEquipment x = new SportEquipment(name, 50);
+        goods.get(x);
         putToRent.addToRentUnitList(inShop);
         goods.remove(inShop);
 

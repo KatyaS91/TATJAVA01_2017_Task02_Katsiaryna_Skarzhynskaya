@@ -17,24 +17,6 @@ public class Customer {
 
     }
 
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
-    public String getGoodName() {
-        return GoodName;
-    }
-
-    public void setGoodName(String goodName) {
-        GoodName = goodName;
-    }
-
-
-
     public void getToRent(String GoodName){
         boolean availability = sh.isInShop(GoodName); // вызвали метод из шопа со строкой названия
         if (availability) {
@@ -43,5 +25,6 @@ public class Customer {
             System.out.println("We don't have such equipment");
         }
     }
+
 
 }

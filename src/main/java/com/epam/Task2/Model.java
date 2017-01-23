@@ -7,12 +7,11 @@ public class Model {
 
     public static void main(String[] args){
 
-        Shop fillTheShop = new Shop("Snowboard");
+        Shop fillTheShop = new Shop();
         fillTheShop.addToShop();
         fillTheShop.goodsInTheShop();
-        //fillTheShop.setName(firstCustomer.getGoodName());
 
-        Customer firstCustomer = new Customer("Snowboard", 1, fillTheShop); // создали объект клиента
+        Customer firstCustomer = new Customer("Snowboard", 50, fillTheShop); // создали объект клиента
         firstCustomer.getToRent("Snowboard");  // вызвали методы взять в прокат что-то с названием
 
         RentUnit listOfGoodsInRent = new RentUnit();

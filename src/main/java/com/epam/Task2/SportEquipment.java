@@ -41,9 +41,13 @@ public class SportEquipment {
         if (!(o instanceof SportEquipment)) return false;
 
         SportEquipment that = (SportEquipment) o;
-
-        if (getPrice() != that.getPrice()) return false;
         return getTitle().equals(that.getTitle());
     }
 
+    @Override
+    public int hashCode() {
+        int result = getTitle() != null ? getTitle().hashCode() : 0;
+        result = 31 * result + getPrice();
+        return result;
+    }
 }
