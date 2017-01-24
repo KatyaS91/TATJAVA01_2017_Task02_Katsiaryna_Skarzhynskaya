@@ -22,7 +22,7 @@ public class SportEquipment {
         this.price = price;
     }
 
-    public SportEquipment(String title, int price){
+    public SportEquipment() {
         title = this.getTitle();
         price = this.getPrice();
     }

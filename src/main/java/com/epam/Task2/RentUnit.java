@@ -14,8 +14,17 @@ public class RentUnit {
         units.add(x);
     }
 
-    public void RentList(){
-        System.out.println("Goods were taken in rent: " + units);
+    public void RentList() {
+
+        for (int i = 0; i < units.size(); i++) {
+            System.out.println("Goods were taken in rent: " + units.get(i).toString());
+        }
     }
 
+    @Override
+    public String toString() {
+        return "RentUnit{" +
+                "units=" + units +
+                '}';
+    }
 }

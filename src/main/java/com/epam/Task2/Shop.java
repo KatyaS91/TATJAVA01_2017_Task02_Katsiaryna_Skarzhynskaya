@@ -15,13 +15,13 @@ public class Shop {
 
     public void addToShop() {
 
-        SportEquipment Snowboard = new SportEquipment("Snowboard", 50);
+        SportEquipment Snowboard = new SportEquipment();
         Snowboard.setTitle("Snowboard");
         Snowboard.setPrice(50);
-        SportEquipment Helmet = new SportEquipment("Helmet", 10);
+        SportEquipment Helmet = new SportEquipment();
         Helmet.setPrice(10);
         Helmet.setTitle("Helmet");
-        SportEquipment Gloves = new SportEquipment("Gloves", 10);
+        SportEquipment Gloves = new SportEquipment();
         Gloves.setTitle("Gloves");
         Gloves.setPrice(10);
 
@@ -31,16 +31,19 @@ public class Shop {
     }
 
     public boolean isInShop(String name) {  // проверяет есть ли строка с таким названием в ключе
-        SportEquipment x = new SportEquipment(name, 50);
+        SportEquipment x = new SportEquipment();
+        x.setTitle(name);
         if (goods.containsKey(x)) {
             return goods.containsKey(x); // если такая строка есть
         }
         return false; // если такой нет
+        //return true;
     }
 
     public void getGood(String name) { // взять из мапы объект
         RentUnit putToRent = new RentUnit();
-        SportEquipment x = new SportEquipment(name, 50);
+        SportEquipment x = new SportEquipment();
+        x.setTitle(name);
         goods.get(x);
         putToRent.addToRentUnitList(inShop);
         goods.remove(inShop);
