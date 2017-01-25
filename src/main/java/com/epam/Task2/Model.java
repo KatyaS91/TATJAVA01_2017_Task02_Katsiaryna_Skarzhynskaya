@@ -12,18 +12,25 @@ public class Model {
         fillTheShop.addToShop();
         fillTheShop.goodsInTheShop();
 
+        RentUnit rentEquipment = new RentUnit();
+
         Customer firstCustomer = new Customer(); // создали объект клиента
         firstCustomer.setGoodName("Snowboard");
         firstCustomer.setNumber(1);
         firstCustomer.setSh(fillTheShop);
+        firstCustomer.setRentList(rentEquipment);
         firstCustomer.getToRent(firstCustomer.getGoodName());  // вызвали методы взять в прокат что-то с названием
 
-        RentUnit listOfGoodsInRent = new RentUnit();
-        SportEquipment x = new SportEquipment();
-        x.setTitle("Helmet");
-        x.setPrice(10);
-        listOfGoodsInRent.addToRentUnitList(x);
-        listOfGoodsInRent.RentList();
+
+        Customer secondCustomer = new Customer();
+        secondCustomer.setGoodName("Helmet");
+        secondCustomer.setSh(fillTheShop);
+        secondCustomer.setRentList(rentEquipment);
+        secondCustomer.getToRent(secondCustomer.getGoodName());
+
+
+        rentEquipment.RentList();
+        fillTheShop.goodsInTheShop();
 
     }
 }

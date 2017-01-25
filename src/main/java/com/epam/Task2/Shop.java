@@ -1,14 +1,13 @@
 package com.epam.Task2;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by skarzhynskaya_katya on 1/19/17.
  */
 
 public class Shop {
-
-    SportEquipment inShop;
 
     private Map<SportEquipment, Integer> goods = new HashMap<SportEquipment, Integer>();
 
@@ -30,24 +29,28 @@ public class Shop {
         goods.put(Gloves, 3);
     }
 
-    public boolean isInShop(String name) {  // проверяет есть ли строка с таким названием в ключе
+    public boolean isInShop(String name) {
         SportEquipment x = new SportEquipment();
         x.setTitle(name);
-        if (goods.containsKey(x)) {
-            return goods.containsKey(x); // если такая строка есть
+        Set keys = goods.keySet();
+        for (Object key : keys) {
+            if (key.equals(x)) {
+                return true;
+            }
         }
-        return false; // если такой нет
-        //return true;
+        return false;
     }
 
-    public void getGood(String name) { // взять из мапы объект
-        RentUnit putToRent = new RentUnit();
+
+    public SportEquipment getGood(String name) {
         SportEquipment x = new SportEquipment();
         x.setTitle(name);
-        goods.get(x);
-        putToRent.addToRentUnitList(inShop);
-        goods.remove(inShop);
+        return x;
+    }
 
+    public void removeFromShop(SportEquipment x) {
+        goods.get(x);
+        goods.remove(x);
     }
 
     public void goodsInTheShop() {
