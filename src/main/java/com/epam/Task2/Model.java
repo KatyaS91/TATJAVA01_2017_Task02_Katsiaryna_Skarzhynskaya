@@ -16,7 +16,6 @@ public class Model {
 
         Customer firstCustomer = new Customer(); // создали объект клиента
         firstCustomer.setGoodName("Snowboard");
-        firstCustomer.setNumber(1);
         firstCustomer.setSh(fillTheShop);
         firstCustomer.setRentList(rentEquipment);
         firstCustomer.getToRent(firstCustomer.getGoodName());  // вызвали методы взять в прокат что-то с названием

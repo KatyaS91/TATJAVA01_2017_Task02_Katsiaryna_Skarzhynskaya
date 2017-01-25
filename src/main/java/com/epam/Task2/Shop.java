@@ -16,13 +16,11 @@ public class Shop {
 
         SportEquipment Snowboard = new SportEquipment();
         Snowboard.setTitle("Snowboard");
-        Snowboard.setPrice(50);
         SportEquipment Helmet = new SportEquipment();
-        Helmet.setPrice(10);
         Helmet.setTitle("Helmet");
         SportEquipment Gloves = new SportEquipment();
         Gloves.setTitle("Gloves");
-        Gloves.setPrice(10);
+
 
         goods.put(Snowboard, 3);
         goods.put(Helmet, 3);
@@ -32,9 +30,9 @@ public class Shop {
     public boolean isInShop(String name) {
         SportEquipment x = new SportEquipment();
         x.setTitle(name);
-        Set keys = goods.keySet();
-        for (Object key : keys) {
-            if (key.equals(x)) {
+        Set<SportEquipment> keys = goods.keySet();
+        for (SportEquipment key : keys) {
+            if (key.getTitle().equals(name)) {
                 return true;
             }
         }

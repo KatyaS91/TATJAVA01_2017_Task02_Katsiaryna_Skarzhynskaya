@@ -18,10 +18,6 @@ public class SportEquipment {
         this.title = title;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
     public SportEquipment() {
         title = this.getTitle();
         price = this.getPrice();
